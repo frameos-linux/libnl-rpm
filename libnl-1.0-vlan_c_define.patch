@@ -1,0 +1,13 @@
+diff -uNr -uNr libnl-1.1.orig/lib/route/link/vlan.c libnl-1.1/lib/route/link/vlan.c
+--- libnl-1.1.orig/lib/route/link/vlan.c	2008-01-14 16:48:45.000000000 +0100
++++ libnl-1.1/lib/route/link/vlan.c	2010-07-01 14:48:22.142201790 +0200
+@@ -27,6 +27,9 @@
+ #include <netlink/route/link/vlan.h>
+ 
+ #include <linux/if_vlan.h>
++#ifndef VLAN_FLAG_REORDER_HDR
++#define VLAN_FLAG_REORDER_HDR 0x01
++#endif
+ 
+ /** @cond SKIP */
+ #define VLAN_HAS_ID		(1<<0)
